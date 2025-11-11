@@ -1,0 +1,7 @@
+fragment ButtonBlockPropertyData on ButtonBlockProperty {
+  link { ...LinkData }
+  BtnText
+  className
+  buttonType
+  variant
+}
