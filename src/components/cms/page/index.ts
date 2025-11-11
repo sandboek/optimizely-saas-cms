@@ -1,17 +1,20 @@
 // Auto generated dictionary
-import { ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
-import ArticlePage from "./ArticlePage";
-import ArticleGroupPage from "./ArticleGroupPage";
+// @not-modified => When this line is removed, the "force" parameter of the CLI tool is required to overwrite this file
+import { type ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
+import ArticlePageComponent from "./ArticlePage";
+import ArticleGroupPageComponent from "./ArticleGroupPage";
 
-export const pageDictionary : ComponentTypeDictionary = [
-    {
-        type: 'ArticlePage',
-        component: ArticlePage
+// Build dictionary
+export const PageFactory : ComponentTypeDictionary = [
+    { 
+        type: "ArticlePage", 
+        component: ArticlePageComponent 
     },
-    {
-        type: 'ArticleGroupPage',
-        component: ArticleGroupPage
-    },
-]
+    { 
+        type: "ArticleGroupPage", 
+        component: ArticleGroupPageComponent 
+    }
+];
 
-export default pageDictionary
+// Export dictionary
+export default PageFactory;

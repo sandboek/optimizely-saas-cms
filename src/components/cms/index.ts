@@ -1,32 +1,42 @@
 // Auto generated dictionary
-import { ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
-import componentComponents from "./component";
-import elementComponents from "./element";
-import experienceComponents from "./experience";
-import pageComponents from "./page";
-import nodeComponents from "./styles"
+// @not-modified => When this line is removed, the "force" parameter of the CLI tool is required to overwrite this file
+import { type ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
+import NodeComponent from "./node";
+import SectionFactory from "./section";
+import PageFactory from "./page";
+import NodesFactory from "./nodes";
+import ExperienceFactory from "./experience";
+import ComponentFactory from "./component";
 
-prefixDictionaryEntries(componentComponents, 'Component');
-prefixDictionaryEntries(elementComponents, 'Element');
-prefixDictionaryEntries(elementComponents, 'Component'); // Elements are a subtype of Component
-prefixDictionaryEntries(experienceComponents, 'Experience');
-prefixDictionaryEntries(experienceComponents, 'Page'); // Experiences are a subtype of Page
-prefixDictionaryEntries(pageComponents, 'Page');
-prefixDictionaryEntries(nodeComponents, 'Component'); // Nodes are considered components as well
+// Prefix entries - if needed
+prefixDictionaryEntries(SectionFactory, "Section");
+prefixDictionaryEntries(PageFactory, "Page");
+prefixDictionaryEntries(NodesFactory, "Nodes");
+prefixDictionaryEntries(ExperienceFactory, "Experience");
+prefixDictionaryEntries(ExperienceFactory, "Page");
+prefixDictionaryEntries(ComponentFactory, "Component");
 
-export const cmsComponentDictionary : ComponentTypeDictionary = [
-    ...componentComponents,
-    ...elementComponents,
-    ...experienceComponents,
-    ...pageComponents,
-    ...nodeComponents
-]
+// Build dictionary
+export const CmsFactory : ComponentTypeDictionary = [
+    { 
+        type: "Node", 
+        component: NodeComponent 
+    },
+    ...SectionFactory,
+    ...PageFactory,
+    ...NodesFactory,
+    ...ExperienceFactory,
+    ...ComponentFactory
+];
 
-export default cmsComponentDictionary
+// Export dictionary
+export default CmsFactory;
+
+// Helper functions
 function prefixDictionaryEntries(list: ComponentTypeDictionary, prefix: string) : ComponentTypeDictionary
 {
     list.forEach((component, idx, dictionary) => {
         dictionary[idx].type = typeof component.type == 'string' ? prefix + "/" + component.type : [ prefix, ...component.type ]
-    })
-    return list
+    });
+    return list;
 }

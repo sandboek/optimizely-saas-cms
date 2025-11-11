@@ -1,25 +1,25 @@
-import { type OptimizelyNextPage } from '@remkoj/optimizely-cms-nextjs'
-import { type BlankExperienceDataFragment, type ExperienceDataFragment, type Maybe, type ICompositionNode, BlankExperienceDataFragmentDoc } from '@/gql/graphql'
-import { OptimizelyComposition, isNode, CmsEditable } from '@remkoj/optimizely-cms-react/rsc'
-import { getSdk } from '@/sdk'
+import { type OptimizelyNextPage as CmsComponent } from "@remkoj/optimizely-cms-nextjs";
+import { getFragmentData } from "@/gql/fragment-masking";
+import { ExperienceDataFragmentDoc, CompositionDataFragmentDoc, BlankExperienceDataFragmentDoc, type BlankExperienceDataFragment } from "@/gql/graphql";
+import { OptimizelyComposition, isNode, CmsEditable } from "@remkoj/optimizely-cms-react/rsc";
+import { getSdk } from "@/gql"
 
-export const BlankExperience : OptimizelyNextPage<BlankExperienceDataFragment> = ({ data }) => 
-{
-    const composition = (data as ExperienceDataFragment).composition as Maybe<ICompositionNode>
-    return <CmsEditable as="main" cmsFieldName="unstructuredData" className="flex-grow overflow-x-hidden">
+/**
+ * Blank Experience
+ * An experience without a predefined layout. 
+ */
+export const BlankExperienceExperience : CmsComponent<BlankExperienceDataFragment> = ({ data, ctx }) => {
+    const composition = getFragmentData(CompositionDataFragmentDoc, getFragmentData(ExperienceDataFragmentDoc, data)?.composition)
+    return <CmsEditable as="div" className="mx-auto px-2 container" cmsFieldName="unstructuredData" ctx={ctx}>
         { composition && isNode(composition) && <OptimizelyComposition node={composition} /> }
     </CmsEditable>
 }
-BlankExperience.displayName = "BlankExperience"
-BlankExperience.getDataFragment = () => ['BlankExperienceData', BlankExperienceDataFragmentDoc]
-BlankExperience.getMetaData = async (contentLink) => {
-    const sdk = getSdk()
-    const response = await sdk.getBlankExperienceMetaData(contentLink)
-    const experienceData = (response?.BlankExperience?.items || [])[0]
-    const title = experienceData?.SeoSettings?.metaTitle ?? experienceData?._metadata?.displayName ?? "Unnamed blank experience"
-    return {
-        title: title
-    }
+BlankExperienceExperience.displayName = "Blank Experience (Experience/BlankExperience)"
+BlankExperienceExperience.getDataFragment = () => ['BlankExperienceData', BlankExperienceDataFragmentDoc]
+BlankExperienceExperience.getMetaData = async (contentLink, locale, client) => {
+    const sdk = getSdk(client);
+    // Add your metadata logic here
+    return {}
 }
 
-export default BlankExperience
+export default BlankExperienceExperience

@@ -3,24 +3,12 @@
   "displayName": "Office Location",
   "description": "",
   "baseType": "component",
-  "source": "",
   "sortOrder": 100,
-  "features": [
-    "localization",
-    "versioning",
-    "publishPeriod"
-  ],
-  "usage": [
-    "property",
-    "instance"
-  ],
   "mayContainTypes": [
     "OfficeLocation"
   ],
   "mediaFileExtensions": [],
-  "created": "2024-05-10T07:52:56.1405025+00:00",
-  "lastModified": "2024-05-10T08:01:40.5173425+00:00",
-  "lastModifiedBy": "remko.jantzen@optimizely.com",
+  "compositionBehaviors": [],
   "properties": {
     "OfficeTitle": {
       "type": "string",

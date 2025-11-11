@@ -1,37 +1,16 @@
-import "server-only"
-import { getSdk } from "@/sdk"
-import Header from "./_header"
-import { getLabelDictionary } from '@/labels'
-import type { MenuItems, UtilityItems } from './types/headerTypes'
+import Image from 'next/image'
+import Link from 'next/link'
 
-export async function MoseyBankHeader() {
-    const sdk = getSdk()
-    const config = getFirstIfExists((await sdk.getHeader())?.menuItems?.items)
-    const labels = await getLabelDictionary()
-    if (!config) {
-        console.log("🔴 Header not found")
-        return null
-    }
-    const menuItems = filterMaybeArray(config.headerNavigation) as MenuItems
-    const utilityItems = filterMaybeArray(config.utilityNavigation) as UtilityItems
-
-    return <Header logoItem={ config.logo } darkLogoItem={ config.darkLogo } menuItems={ menuItems } utilityItems={ utilityItems } labels={ labels } />
+export const SiteHeader = ({}) => {
+    return <header className='p-5 flex flex-row'>
+        <Link className='block relative min-w-[225px]' title='Moseybank - An Optimizely Demo Company' href="https://www.optimizely.com/get-started">
+            <Image src="/moseybank.svg" width={ 200 } height={ 36 } alt="Mosey Bank" className='mr-[25px]'/>
+            <div className='absolute top-[28px] left-[65px] nowrap'>An Optimizely demo</div>
+        </Link>
+        <Link className='block ml-auto' href='https://nextjs.org'>
+            <Image src="/next.svg" width={ 150 } height={ 30 } alt="Powered by Next.js" title="Powered by Next.js" />
+        </Link>
+    </header>
 }
 
-export default MoseyBankHeader
-
-function getFirstIfExists<T>(input: Array<T | null> | null | undefined) : T | undefined
-{
-    if (!input || !Array.isArray(input))
-        return undefined
-    return input[0] || undefined
-}
-
-function filterMaybeArray<T>(input: Array<T | null> | T | null | undefined) : Array<T>
-{
-    if (!input)
-        return []
-    if (!Array.isArray(input))
-        return [ input ]
-    return input.filter(x => x) as Array<T>
-}
+export default SiteHeader

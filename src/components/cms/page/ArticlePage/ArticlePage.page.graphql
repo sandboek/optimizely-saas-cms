@@ -1,13 +1,8 @@
 fragment ArticlePageData on ArticlePage {
-  metadata: _metadata {
-    published
-  }
-  articleHeroImage {
-    ...ReferenceData
-  }
-  articleAuthors
+  articleSeoSettings { ...PageSeoSettingsPropertyData }
+  articleHeroImage { ...ReferenceData }
+  articleSummary { json, html }
   articleTitle
-  articleBody {
-    json
-  }
+  articleAuthors
+  articleBody { json, html }
 }
