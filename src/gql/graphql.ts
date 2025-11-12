@@ -533,7 +533,6 @@ export type ButtonBlock = IData & _IComponent & _IContent & {
   buttonType?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
   link?: Maybe<ContentUrl>;
-  text?: Maybe<Scalars['String']['output']>;
   variant?: Maybe<Scalars['String']['output']>;
 };
 
@@ -590,7 +589,6 @@ export type ButtonBlockProperty = {
   buttonType?: Maybe<Scalars['String']['output']>;
   className?: Maybe<Scalars['String']['output']>;
   link?: Maybe<ContentUrl>;
-  text?: Maybe<Scalars['String']['output']>;
   variant?: Maybe<Scalars['String']['output']>;
 };
 
