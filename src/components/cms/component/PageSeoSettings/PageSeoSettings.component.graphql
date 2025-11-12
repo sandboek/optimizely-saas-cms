@@ -1,3 +1,0 @@
-fragment PageSeoSettingsData on PageSeoSettings {
-  metaTitle
-}

@@ -1,4 +1,0 @@
-fragment DictionaryItemPropertyData on DictionaryItemProperty {
-  DictionaryItemKey
-  DictionaryItemValue
-}

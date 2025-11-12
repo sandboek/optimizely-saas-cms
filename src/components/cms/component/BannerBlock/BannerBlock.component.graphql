@@ -1,3 +1,0 @@
-fragment BannerBlockData on BannerBlock {
-  Title
-}

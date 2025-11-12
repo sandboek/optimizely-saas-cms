@@ -1,8 +1,0 @@
-fragment ArticlePageData on ArticlePage {
-  articleSeoSettings { ...PageSeoSettingsPropertyData }
-  articleHeroImage { ...ReferenceData }
-  articleSummary { json, html }
-  articleTitle
-  articleAuthors
-  articleBody { json, html }
-}
