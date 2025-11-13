@@ -1,0 +1,3 @@
+fragment SandPageData on SandPage {
+  MainContent { ...BlockData }
+}
