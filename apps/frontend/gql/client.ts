@@ -309,6 +309,55 @@ export const RichTextElementDataFragmentDoc = gql`
   }
 }
     `;
+export const SandPageAreasBlockDataFragmentDoc = gql`
+    fragment SandPageAreasBlockData on SandPageAreasBlock {
+  HeroImageArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  SearchBarArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  PopularNormsArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  QuickLinksProductsAndServicesArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  SmallContentTeaserTopArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  QuickLinksVakgebiedenArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  LargeContentTeaserBottomArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  QuickLinksNewsArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  QuickLinksEventsArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+}
+    `;
 export const TestimonialElementDataFragmentDoc = gql`
     fragment TestimonialElementData on TestimonialElement {
   customerName
@@ -379,6 +428,7 @@ export const ContinueReadingComponentDataFragmentDoc = gql`
     ...ParagraphElementData
     ...QuoteBlockData
     ...RichTextElementData
+    ...SandPageAreasBlockData
     ...TestimonialElementData
     ...TextBlockData
     ...VideoElementData
@@ -410,6 +460,7 @@ export const CarouselBlockDataFragmentDoc = gql`
     ...ParagraphElementData
     ...QuoteBlockData
     ...RichTextElementData
+    ...SandPageAreasBlockData
     ...TestimonialElementData
     ...TextBlockData
     ...VideoElementData
@@ -439,6 +490,7 @@ export const CompositionComponentNodeDataFragmentDoc = gql`
     ...ParagraphElementData
     ...QuoteBlockData
     ...RichTextElementData
+    ...SandPageAreasBlockData
     ...TestimonialElementData
     ...TextBlockData
     ...VideoElementData
@@ -538,6 +590,7 @@ export const BlogPostPageDataFragmentDoc = gql`
     ...ParagraphElementData
     ...QuoteBlockData
     ...RichTextElementData
+    ...SandPageAreasBlockData
     ...TestimonialElementData
     ...TextBlockData
     ...VideoElementData
@@ -582,6 +635,7 @@ export const LandingPageDataFragmentDoc = gql`
     ...ParagraphElementData
     ...QuoteBlockData
     ...RichTextElementData
+    ...SandPageAreasBlockData
     ...TestimonialElementData
     ...TextBlockData
     ...VideoElementData
@@ -606,6 +660,92 @@ export const LandingPageDataFragmentDoc = gql`
     ...ParagraphElementData
     ...QuoteBlockData
     ...RichTextElementData
+    ...SandPageAreasBlockData
+    ...TestimonialElementData
+    ...TextBlockData
+    ...VideoElementData
+    ...BlankSectionData
+  }
+}
+    `;
+export const SandPageAreasBlockPropertyDataFragmentDoc = gql`
+    fragment SandPageAreasBlockPropertyData on SandPageAreasBlockProperty {
+  HeroImageArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  SearchBarArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  PopularNormsArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  QuickLinksProductsAndServicesArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  SmallContentTeaserTopArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  QuickLinksVakgebiedenArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  LargeContentTeaserBottomArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  QuickLinksNewsArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+  QuickLinksEventsArea {
+    ...IContentListItem
+    ...ImageMediaComponentData
+    ...VideoMediaComponentData
+  }
+}
+    `;
+export const SandHomepage2DataFragmentDoc = gql`
+    fragment SandHomepage2Data on SandHomepage2 {
+  SandAreas {
+    ...SandPageAreasBlockPropertyData
+  }
+}
+    `;
+export const SandPageDataFragmentDoc = gql`
+    fragment SandPageData on SandPage {
+  MainContent {
+    ...BlockData
+    ...ArticleListElementData
+    ...ButtonBlockData
+    ...CTAElementData
+    ...CarouselBlockData
+    ...ContentRecsElementData
+    ...ContinueReadingComponentData
+    ...HeadingElementData
+    ...HeroBlockData
+    ...ImageElementData
+    ...LayoutSettingsBlockData
+    ...MegaMenuGroupBlockData
+    ...MenuNavigationBlockData
+    ...OdpEmbedBlockData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...QuoteBlockData
+    ...RichTextElementData
+    ...SandPageAreasBlockData
     ...TestimonialElementData
     ...TextBlockData
     ...VideoElementData
@@ -717,6 +857,7 @@ ${PageSeoSettingsDataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
 ${QuoteBlockDataFragmentDoc}
 ${RichTextElementDataFragmentDoc}
+${SandPageAreasBlockDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${TextBlockDataFragmentDoc}
 ${VideoElementDataFragmentDoc}
@@ -1121,6 +1262,7 @@ export const getContentByIdDocument = gql`
       ...ParagraphElementData
       ...QuoteBlockData
       ...RichTextElementData
+      ...SandPageAreasBlockData
       ...TestimonialElementData
       ...TextBlockData
       ...VideoElementData
@@ -1129,6 +1271,8 @@ export const getContentByIdDocument = gql`
       ...BlogSectionExperienceData
       ...BlogPostPageData
       ...LandingPageData
+      ...SandHomepage2Data
+      ...SandPageData
     }
   }
 }
@@ -1161,6 +1305,7 @@ ${PageSeoSettingsDataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
 ${QuoteBlockDataFragmentDoc}
 ${RichTextElementDataFragmentDoc}
+${SandPageAreasBlockDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${TextBlockDataFragmentDoc}
 ${VideoElementDataFragmentDoc}
@@ -1174,7 +1319,10 @@ ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
 ${BlogSectionExperienceDataFragmentDoc}
 ${BlogPostPageDataFragmentDoc}
-${LandingPageDataFragmentDoc}`;
+${LandingPageDataFragmentDoc}
+${SandHomepage2DataFragmentDoc}
+${SandPageAreasBlockPropertyDataFragmentDoc}
+${SandPageDataFragmentDoc}`;
 export const getContentByPathDocument = gql`
     query getContentByPath($path: [String!]!, $locale: [Locales!], $siteId: String, $changeset: String = null) {
   content: _Content(
@@ -1189,6 +1337,8 @@ export const getContentByPathDocument = gql`
       ...BlogSectionExperienceData
       ...BlogPostPageData
       ...LandingPageData
+      ...SandHomepage2Data
+      ...SandPageData
     }
   }
 }
@@ -1228,13 +1378,17 @@ ${PageSeoSettingsDataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
 ${QuoteBlockDataFragmentDoc}
 ${RichTextElementDataFragmentDoc}
+${SandPageAreasBlockDataFragmentDoc}
 ${TestimonialElementDataFragmentDoc}
 ${TextBlockDataFragmentDoc}
 ${VideoElementDataFragmentDoc}
 ${BlankSectionDataFragmentDoc}
 ${BlogSectionExperienceDataFragmentDoc}
 ${BlogPostPageDataFragmentDoc}
-${LandingPageDataFragmentDoc}`;
+${LandingPageDataFragmentDoc}
+${SandHomepage2DataFragmentDoc}
+${SandPageAreasBlockPropertyDataFragmentDoc}
+${SandPageDataFragmentDoc}`;
 export const getContentTypeDocument = gql`
     query getContentType($key: String!, $version: String, $locale: [Locales!], $path: String = "-", $domain: String) {
   content: _Content(
