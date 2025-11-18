@@ -1,5 +1,5 @@
 import { CmsEditable, type CmsComponent } from "@remkoj/optimizely-cms-react/rsc";
-import { SandPageAreasBlockDataFragmentDoc, type SandPageAreasBlockDataFragment } from "@/gql/graphql";
+import { SandPageAreasBlock, SandPageAreasBlockDataFragmentDoc, type SandPageAreasBlockDataFragment } from "@/gql/graphql";
 
 /**
  * Sand Page Areas Block
@@ -15,6 +15,6 @@ export const SandPageAreasBlockComponent : CmsComponent<SandPageAreasBlockDataFr
     </CmsEditable>
 }
 SandPageAreasBlockComponent.displayName = "Sand Page Areas Block (Component/SandPageAreasBlock)"
-SandPageAreasBlockComponent.getDataFragment = () => ['SandPageAreasBlockData', SandPageAreasBlockDataFragmentDoc]
+SandPageAreasBlockComponent.getDataFragment = () => ['SandPageAreasBlockData', SandPageAreasBlockDataFragmentDoc];
 
 export default SandPageAreasBlockComponent

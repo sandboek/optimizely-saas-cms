@@ -16,23 +16,23 @@ const nextConfig = {
         remotePatterns: [
             // Optimizely CMS
             {
-                protocol: 'https',
-                hostname: '*.cms.optimizely.com',
-                pathname: '/**'
+                protocol: "https",
+                hostname: "*.cms.optimizely.com",
+                pathname: "/**"
             },
             // Optimizely Content Recommendations
             {
-                protocol: 'https',
-                hostname: '*.idio.co',
-                pathname: '/**'
+                protocol: "https",
+                hostname: "*.idio.co",
+                pathname: "/**"
             }
         ]
     },
     experimental: {
         serverActions: {
           allowedOrigins: [
-            '*.webproofing.cmp.optimizely.com', // Optimizely CMP Preview
-            'www.optimizelyedit.com/' // Optimizely Web Experimentation & Personalization Editor
+            "*.webproofing.cmp.optimizely.com", // Optimizely CMP Preview
+            "www.optimizelyedit.com/" // Optimizely Web Experimentation & Personalization Editor
           ],
         }
     }
@@ -44,8 +44,8 @@ const nextConfig = {
  */
 const optimizelyDxpUrl = process.env.NEXT_PUBLIC_OPTIMIZELY_CMS_URL
 if (optimizelyDxpUrl) {
-    nextConfig.images.loader = 'custom';
-    nextConfig.images.loaderFile = './src/cloudflareLoader.js'; // Use Cloudflare Images for resizing
+    nextConfig.images.loader = "custom";
+    nextConfig.images.loaderFile = "./src/cloudflareLoader.js"; // Use Cloudflare Images for resizing
 }
 
 module.exports = nextConfig
