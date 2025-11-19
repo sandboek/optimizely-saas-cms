@@ -1,7 +1,7 @@
 fragment ButtonBlockData on ButtonBlock {
-  link { ...LinkData }
-  BtnText
-  className
-  buttonType
-  variant
+  ButtonUrl { ...LinkData }
+  ButtonText
+  ButtonText
+  ButtonType
+  ButtonVariant
 }

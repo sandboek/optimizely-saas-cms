@@ -8,7 +8,7 @@
   "mediaFileExtensions": [],
   "compositionBehaviors": [],
   "properties": {
-    "link": {
+    "ButtonUrl": {
       "type": "url",
       "displayName": "Link",
       "description": "",
@@ -18,7 +18,7 @@
       "sortOrder": 0,
       "editorSettings": {}
     },
-    "BtnText": {
+    "ButtonText": {
       "type": "string",
       "format": "shortString",
       "displayName": "Btn Text",
@@ -29,7 +29,7 @@
       "sortOrder": 100,
       "editorSettings": {}
     },
-    "className": {
+    "ButtonClass": {
       "type": "string",
       "format": "shortString",
       "displayName": "CSS Classes",
@@ -40,7 +40,7 @@
       "sortOrder": 100,
       "editorSettings": {}
     },
-    "buttonType": {
+    "ButtonType": {
       "type": "string",
       "format": "selectOne",
       "displayName": "Button Type",
@@ -63,7 +63,7 @@
         ]
       }
     },
-    "variant": {
+    "ButtonVariant": {
       "type": "string",
       "format": "selectOne",
       "displayName": "Variant",

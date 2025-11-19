@@ -8,7 +8,7 @@
   "mediaFileExtensions": [],
   "compositionBehaviors": [],
   "properties": {
-    "metaTitle": {
+    "MetaTitle": {
       "type": "string",
       "format": "shortString",
       "displayName": "Meta title",

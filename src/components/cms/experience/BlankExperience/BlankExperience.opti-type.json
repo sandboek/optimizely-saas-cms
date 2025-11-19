@@ -13,7 +13,7 @@
   "compositionBehaviors": [],
   "lastModifiedBy": "",
   "properties": {
-    "SeoSettings": {
+    "BlankExperienceSeoSettings": {
       "type": "component",
       "contentType": "PageSeoSettings",
       "displayName": "SEO Settings",
