@@ -1,3 +1,0 @@
-fragment OdpEmbedBlockData on OdpEmbedBlock {
-  ContentId
-}

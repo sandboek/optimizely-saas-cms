@@ -1,7 +1,0 @@
-fragment PageSeoSettingsData on PageSeoSettings {
-  MetaTitle
-  MetaDescription
-  MetaKeywords
-  SharingImage { ...ReferenceData }
-  GraphType
-}

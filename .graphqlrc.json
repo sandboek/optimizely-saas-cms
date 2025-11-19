@@ -1,7 +1,0 @@
-{
-  "schema": "apps/frontend/gql/schema.graphqls",
-  "documents": [
-    "apps/frontend/gql/fragments.graphql",
-    "apps/frontend/src/**/*.{graphql,js,ts,jsx,tsx}"
-  ]
-}

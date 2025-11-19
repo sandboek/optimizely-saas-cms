@@ -1,8 +1,0 @@
-fragment VideoMediaComponentData on VideoMedia {
-  meta: _metadata {
-    url {
-      default
-    }
-    name: displayName
-  }
-}
