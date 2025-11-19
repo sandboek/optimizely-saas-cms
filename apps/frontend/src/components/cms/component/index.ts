@@ -4,7 +4,6 @@ import { type ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
 import VideoElementComponent from "./VideoElement";
 import TextBlockComponent from "./TextBlock";
 import TestimonialElementComponent from "./TestimonialElement";
-import SandPageAreasBlockComponent from "./SandPageAreasBlock";
 import RichTextElementComponent from "./RichTextElement";
 import QuoteBlockComponent from "./QuoteBlock";
 import ParagraphElementComponent from "./ParagraphElement";
@@ -17,10 +16,10 @@ import LayoutSettingsBlockComponent from "./LayoutSettingsBlock";
 import ImageElementComponent from "./ImageElement";
 import HeroBlockComponent from "./HeroBlock";
 import HeadingElementComponent from "./HeadingElement";
-import CTAElementComponent from "./CTAElement";
 import ContinueReadingComponentComponent from "./ContinueReadingComponent";
 import ContentRecsElementComponent from "./ContentRecsElement";
 import CarouselBlockComponent from "./CarouselBlock";
+import CTAElementComponent from "./CTAElement";
 import ButtonBlockComponent from "./ButtonBlock";
 import ArticleListElementComponent from "./ArticleListElement";
 import ArticleListElementLoader from "./ArticleListElement/loading";
@@ -42,10 +41,6 @@ export const ComponentFactory : ComponentTypeDictionary = [
     { 
         type: "TestimonialElement", 
         component: TestimonialElementComponent 
-    },
-    { 
-        type: "SandPageAreasBlock", 
-        component: SandPageAreasBlockComponent 
     },
     { 
         type: "RichTextElement", 
@@ -96,10 +91,6 @@ export const ComponentFactory : ComponentTypeDictionary = [
         component: HeadingElementComponent 
     },
     { 
-        type: "CTAElement", 
-        component: CTAElementComponent 
-    },
-    { 
         type: "ContinueReadingComponent", 
         component: ContinueReadingComponentComponent 
     },
@@ -110,6 +101,10 @@ export const ComponentFactory : ComponentTypeDictionary = [
     { 
         type: "CarouselBlock", 
         component: CarouselBlockComponent 
+    },
+    { 
+        type: "CTAElement", 
+        component: CTAElementComponent 
     },
     { 
         type: "ButtonBlock", 

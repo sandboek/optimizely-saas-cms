@@ -1,3 +1,0 @@
-fragment SandHomepage2Data on SandHomepage2 {
-  SandAreas { ...SandPageAreasBlockPropertyData }
-}
